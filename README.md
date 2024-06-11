@@ -21,5 +21,14 @@
 
 1. [本リポジトリ](https://github.com/FPGA-Seminor-for-Isec/workshop_20240611)にアクセスし、自身のブランチを選択する。
   ![メインリポジトリから自身のブランチを選択](./figure/fig05.png)
-
+2. 各自のブランチにアクセスしたら、submitフォルダを選択する。
+  ![submitディレクトリを選択](./figure/fig06.png)
+3. submitフォルダ配下にある、提出する演習課題のフォルダを選択。
+  ![提出する演習課題フォルダを選択](./figure/fig07.png)
+4. "Upload files"を選択する。
+  ![ファイル更新を選択](./figure/fig08.png)
+5. 提出するファイルをアップロードし、提出する。
+  ![ファイルアップロード](./figure/fig09.png)
+6. アップロード完了
+  ![アップロード完了](./figure/fig10.png)
   
