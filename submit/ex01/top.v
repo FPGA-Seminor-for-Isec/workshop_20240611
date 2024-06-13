@@ -159,6 +159,15 @@ module top (
 	
 	assign reg_led_5 = heat_beat;
 	
+	always @ (posedge axi_clk)
+		if (pin_fpga_gpio == 1b'1)
+			assign pin_fpga_led[4] = 1b'1;
+		else if (pin_fpga_gpio == 1b'0)
+			assign pin_fpga_led[4] = 1b'1;
+	end
+
+
+	
 	// Heatbeat led
 	always @ (posedge axi_clk)
 	begin
