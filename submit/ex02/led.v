@@ -6,8 +6,8 @@ module control_led(
 parameter FREQ=50_000_000;
 
 wire [25:0] time_out;
+wire singa_next=1'b0;
 reg [25:0] time_reg=1'b0;
-reg singa_next=1'b0;
 
 
 always (@ posedge clk) 
