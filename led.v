@@ -9,7 +9,7 @@ module control_led(
     parameter FREQ = 50000000;
 
     always @ (posedge clk)
-        if(rst == 1'b00)
+        if(rst == 1'b1)
             cnt <= 10'b0;
         else if (cnt == 10'd49999999)
             cnt <= 10'b0;
