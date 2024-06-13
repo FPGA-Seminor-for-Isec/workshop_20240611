@@ -158,13 +158,10 @@ module top (
 	assign pin_fpga_led[1] = reg_led_5;
 	
 	//add by hamamoto
-	always  @ (posedge axi_clk)
-	begin
-		if(reg_jp3_1 == 1'b1)
-			reg_led_8 <= 1'b1;
-		else
-			reg_led_8 <= 1'b0;
-	end
+	if(reg_jp3_1 == 1'b1)
+		reg_led_8 <= 1'b1;
+	else
+		reg_led_8 <= 1'b0;
 	
 	assign reg_led_5 = heat_beat;
 	
