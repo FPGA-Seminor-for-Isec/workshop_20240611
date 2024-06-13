@@ -1,22 +1,28 @@
-module control_led(
-    input   clk,
-    input   rst,
-    input   enable,
-    output  signal
-);
-    reg [0:9]   cnt;
-    parameter FREQ = 50000000;
+module control-led(
+    input clk, rst, enable
+    output signal
+)
 
-    always @ (posedge clk)
-        if(rst == 1'b00)
-            cnt <= 11'b0;
-        else if (cnt == 11'd49999999)
-            cnt <= 11'b0;
-        else
-            cnt <= cnt + 11'd1;
+parameter FREQ=50_000_000
+reg [25:0]count
+
+always @(posedge clk) begin
+    if(enable)
+        count <= count + 1
+        if(count == FREQ)
+            if(signal == 0)
+                signal <= 1
+                count <= 0
+            end
+            if(signal == 1)
+                signal <= 0
+                count <= 0
+            end
+            if(rst)
+                count <= 0
+            end
         end
-    
-    assign signal = (cnt == 11'd49999999) ? ~signal : signal;
-
+    end
+end
 
 endmodule
