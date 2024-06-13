@@ -323,15 +323,3 @@ module top (
 		.axi_rst							( axi_rst						)	);	//	input					
 		
 endmodule
-
-module light_led (
-  input [1]  pin_fpga_gpio
-  output [4:1] pin_fpga_led
-);
-
-pin_fpga_led[4:1] = {4{pin_fpga_gpio}};
-
-
-endmodule
-
-
