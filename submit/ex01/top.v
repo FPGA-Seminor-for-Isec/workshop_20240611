@@ -325,11 +325,13 @@ module top (
 endmodule
 
 module light_led (
-  input [1]  pin_fpga_gpio[1]
-  output [4] pin_fpga_led[4]
+  input [1]  pin_fpga_gpio
+  output [4:1] pin_fpga_led
 );
 
-pin_fpga_led = pin_fpga_gpio;
+pin_fpga_led[4:1] = {4{pin_fpga_gpio}};
 
 
 endmodule
+
+
