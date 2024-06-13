@@ -157,6 +157,15 @@ module top (
 	assign pin_fpga_led[2] = reg_led_6;
 	assign pin_fpga_led[1] = reg_led_5;
 	
+	//add by hamamoto
+	always  @ (posedge axi_clk)
+	begin
+		if(pin_fpga_gpio[1] == 1'b1)
+			pin_fpga_led[4] <= 1'b1;
+		else
+			pin_fpga_led[4] <= 1'b0;
+	end
+	
 	assign reg_led_5 = heat_beat;
 	
 	// Heatbeat led
