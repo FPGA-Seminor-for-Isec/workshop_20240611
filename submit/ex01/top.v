@@ -143,24 +143,16 @@ module top (
 	//=========================================================================================================
 	// On board header
 	//=========================================================================================================
-	wire									tact_sw;
-	wire									sync_tact_sw;
 
 	assign pin_fpga_gpio[4] = reg_jp3_4;
 	assign pin_fpga_gpio[3] = reg_jp3_3;
 	assign pin_fpga_gpio[2] = reg_jp3_2;
-	assign pin_fpga_gpio[1] = tact_sw;
+	assign pin_fpga_gpio[1] = reg_jp3_1;
 
-	sync_button sync_button(
-		.clk_50_mhz(axi_clk),
-		.button(reg_sw1_1_in),
-		.sync_button(sync_tact_sw)
-	);
-	
 	//=========================================================================================================
 	// LED
 	//=========================================================================================================
-	assign pin_fpga_led[4] = sync_tact_sw;
+	assign pin_fpga_led[4] = reg_led_8;
 	assign pin_fpga_led[3] = reg_led_7;
 	assign pin_fpga_led[2] = reg_led_6;
 	assign pin_fpga_led[1] = reg_led_5;
