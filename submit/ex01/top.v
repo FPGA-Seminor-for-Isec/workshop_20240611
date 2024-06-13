@@ -152,13 +152,14 @@ module top (
 	//=========================================================================================================
 	// LED
 	//=========================================================================================================
-	assign pin_fpga_led[4] = reg_led_8;
-	assign pin_fpga_led[3] = reg_led_7;
-	assign pin_fpga_led[2] = reg_led_6;
-	assign pin_fpga_led[1] = reg_led_5;
+	assign pin_fpga_led[4] = pin_fpga_gpio[1];
+	assign pin_fpga_led[3] = pin_fpga_gpio[1];
+	assign pin_fpga_led[2] = pin_fpga_gpio[1];
+	assign pin_fpga_led[1] = pin_fpga_gpio[1];
 	
 	assign reg_led_5 = heat_beat;
 	
+
 	// Heatbeat led
 	always @ (posedge axi_clk)
 	begin
@@ -322,16 +323,6 @@ module top (
 		.reg_jp4_txp						( reg_jp4_txp					)	,	//	output			[6:1]	
 		.axi_rst							( axi_rst						)	);	//	input					
 		
-endmodule
-
-module light_led (
-  input [1]  pin_fpga_gpio
-  output [4:1] pin_fpga_led
-);
-
-pin_fpga_led[4:1] = {4{pin_fpga_gpio}};
-
-
 endmodule
 
 
