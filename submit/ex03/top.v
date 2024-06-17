@@ -152,7 +152,7 @@ module top (
 	//=========================================================================================================
 	// LED
 	//=========================================================================================================
-	assign pin_fpga_led[4] = pin_fpga_gpio[1];
+	assign pin_fpga_led[4] = reg_led_8;
 	assign pin_fpga_led[3] = reg_led_7;
 	assign pin_fpga_led[2] = reg_led_6;
 	assign pin_fpga_led[1] = reg_led_5;
